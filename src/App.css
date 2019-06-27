@@ -3,9 +3,10 @@
 }
 
 .App {
-background: #283c86;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #30e28f, #392068);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #30e28f, #392068); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #FFB75E;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ED8F03, #FFB75E);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ED8F03, #FFB75E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 
 
   height: 100vh;
@@ -33,33 +34,51 @@ background: linear-gradient(to right, #30e28f, #392068); /* W3C, IE 10+/ Edge, F
 }
 
 .text-input{
-  position: absolute;
+  display:flex;
+  flex-direction:row;
+  padding:2px;
+  position: fixed;
   bottom: 0;
+  background: rgba(250, 250, 250, 0.5); 
   height: 40px;
-  width: calc(100% - 80px);
-  border-top: 1px solid white;
+  width: 100%;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color:white;
-  
+  text-align: left;
   align-items: center;
+  
 }
 
 .text-input input {
-  width: 90%;
-  height: 100%;
+  width: 100%;
+  height: 70%;
+  position: absolute;
   font-size: 24px;
+  flex-grow:2;
+  border: solid rgb(139, 71, 7);
+  background: rgb(139, 71, 7);
+  border-radius:15px
+}
 
+input:focus{
+  outline: none;
 }
 
 .text-input button{
-  width: 80px;
-  height: 40px;
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  right: 0;
   border-radius: 10px;
   cursor: pointer;
-
+  border:1px solid rgb(238, 184, 103);
+  border-radius:15px;
+  background:rgb(238, 184, 103);
+  color: rgb(139, 71, 7);
+  
 }
 
 .text-input button:hover {
-  background: #392068;
-  color: white;
+  background: rgb(230, 92, 0);
+  border: 1px rgb(230, 92, 0);
+  color: black;
 }

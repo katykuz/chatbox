@@ -10,6 +10,7 @@ function App() {
         <img src={logo} className="logo" alt="logo" />
         Chatbox
         </header>
+      
         <TextInput />
 
     </div>
