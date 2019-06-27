@@ -3,28 +3,25 @@
 }
 
 .App {
-  background: #FFB75E;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #ED8F03, #FFB75E);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ED8F03, #FFB75E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-
+  background: #bdc3c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   height: 100vh;
   text-align: center;
+ 
 }
 .header{
   display: flex;
   align-items: center;
   flex-direction: row;
   font-size:40px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Arial, Helvetica, sans-serif;
   background: rgba(250, 250, 250, 0.2);
-  color:white;
+  color:rgb(70, 68, 68);
   padding: 20px 30px;
   text-align: left;
   border-bottom: 2px solid rgba(250, 250, 250, 0.2);
-
-
 }
 
 .logo {
@@ -36,12 +33,12 @@
 .text-input{
   display:flex;
   flex-direction:row;
-  padding:2px;
+  padding:5px;
   position: fixed;
   bottom: 0;
   background: rgba(250, 250, 250, 0.5); 
   height: 40px;
-  width: 100%;
+  width: calc(100% - 5px);
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-align: left;
   align-items: center;
@@ -52,11 +49,12 @@
   width: 100%;
   height: 70%;
   position: absolute;
+  padding: 10px;
   font-size: 24px;
   flex-grow:2;
-  border: solid rgb(139, 71, 7);
-  background: rgb(139, 71, 7);
-  border-radius:15px
+  border: solid #2c3e50);
+  background: #2c3e50);
+  border-radius:15px;
 }
 
 input:focus{
@@ -67,18 +65,18 @@ input:focus{
   width: 30px;
   height: 20px;
   position: absolute;
-  right: 0;
+  left: calc(100% - 35px);
   border-radius: 10px;
   cursor: pointer;
-  border:1px solid rgb(238, 184, 103);
+  border:1px solid rgb(70, 68, 68, 0.1);
   border-radius:15px;
-  background:rgb(238, 184, 103);
-  color: rgb(139, 71, 7);
+  background:rgb(102, 102, 102);
+  color: white;
   
 }
 
 .text-input button:hover {
-  background: rgb(230, 92, 0);
-  border: 1px rgb(230, 92, 0);
+  background: #141c24);
+  border: 1px  rgb(70, 68, 68, 0.1);
   color: black;
 }
