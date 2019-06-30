@@ -1,8 +1,10 @@
+/* Importing other code files */
 import React from 'react';
 import './App.css';
 import logo from './logo.png'
 import TextInput from './TextInput'
 
+/* Creating the page and what is in the page */
 function App() {
   return (
     <div className="App">

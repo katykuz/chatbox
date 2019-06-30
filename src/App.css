@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+/* App blackground and dimensions given */
 .App {
   background: #bdc3c7;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
@@ -11,6 +12,8 @@
   text-align: center;
  
 }
+
+/* Heading styling, sizing, color */
 .header{
   display: flex;
   align-items: center;
@@ -24,12 +27,14 @@
   border-bottom: 2px solid rgba(250, 250, 250, 0.2);
 }
 
+/* Logo sizing and view */
 .logo {
   height: 60px;
   margin-right: 30px;
   opacity: 1;
 }
 
+/* Text input styling */
 .text-input{
   display:flex;
   flex-direction:row;
@@ -45,6 +50,7 @@
   
 }
 
+/* Interior input box styles */
 .text-input input {
   width: 100%;
   height: 70%;
@@ -63,6 +69,7 @@ input:focus{
   outline: none;
 }
 
+/* Styles for "send" button */
 .text-input button{
   width: 30px;
   height: 20px;
@@ -77,6 +84,7 @@ input:focus{
   
 }
 
+/* Style for hovering over button*/
 .text-input button:hover {
   background: #141c24);
   border: 1px  rgb(70, 68, 68, 0.1);
@@ -88,13 +96,15 @@ input:focus{
   border: 2px solid white;
   background-color: black;
   border-radius: 15px;
-  /*padding: 5px;*/
+  padding: 5px;
   margin: 5px;
   text-align: left;
   color: white;
   height: 45px;
   width: 300px;
   align-items: center;
+  display:flex;
+  flex-direction:row;
 }
 
 /* Darker chat container */

@@ -1,5 +1,6 @@
 import React from 'react'
 
+/* Inserting Text Input Box */
 class TextInput extends React.Component{
 
     render(){
