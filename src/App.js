@@ -13,12 +13,10 @@ function App() {
 
         <div className="container">
             <p>Hello. How are you today?</p>
-            <span class="time-left">11:00</span>
             </div>
 
         <div class="container darker">
            <p>Hey! I'm fine. Thanks for asking!</p>
-           <span class="time-left">11:01</span>
         </div>
       
         <TextInput />

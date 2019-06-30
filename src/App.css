@@ -109,15 +109,3 @@ input:focus{
   clear: both;
   display: table;
 }
-
-/* Style time text */
-.time-right {
-  float: right;
-  color: #aaa;
-}
-
-/* Style time text */
-.time-left {
-  float: right;
-  color: #999;
-}
