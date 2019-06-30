@@ -7,7 +7,7 @@ class TextInput extends React.Component{
             <input />
             <button> &#8594; </button>
             </div>)
-                }
+            }
 
             }
             

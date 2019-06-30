@@ -82,3 +82,42 @@ input:focus{
   border: 1px  rgb(70, 68, 68, 0.1);
   color: black;
 }
+
+/* Chat containers */
+.container {
+  border: 2px solid white;
+  background-color: black;
+  border-radius: 15px;
+  /*padding: 5px;*/
+  margin: 5px;
+  text-align: left;
+  color: white;
+  height: 45px;
+  width: 300px;
+  align-items: center;
+}
+
+/* Darker chat container */
+.darker {
+  border-color: #ccc;
+  background-color: black;
+}
+
+/* Clear floats */
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Style time text */
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+  float: right;
+  color: #999;
+}
