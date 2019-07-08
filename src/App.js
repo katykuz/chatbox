@@ -14,53 +14,55 @@ class App extends React.Component {
     editName: false,
   }
 
-  gotMessage = (m) => {
-    const message = {
-      text: m,
-      from: this.state.name
+  componentWillMount(){
+    var name = localStorage.getItem('name')
+    if(name){
+      this.setState({name})
     }
-    /* ... is a separator*/
-    var newMessagesArray = [...this.state.messages, m]
-    this.setState({messages: newMessagesArray})
   }
 
-  setEditName = (boolian) => {
-    var editName = boolian
+  gotMessage = (text) => {
+    var message = {
+      text,
+      from: this.state.name
+    }
+    var newMessagesArray = [message, ...this.state.messages]
+    this.setState({messages: newMessagesArray})
+
+  }
+
+  setEditName = (editName) =>{
+    if(!editName){
+      localStorage.setItem('name', this.state.name)
+    }
     this.setState({editName})
   }
 
 
   render() {
-    var {messages} = this.state
+    var {editName, messages, name} = this.state
     return (
       <div className="App">
         <header className="header">
           <div><img src={logo} className="logo" alt="logo" />
           Chatbox</div>
-          <div className="name-input">
         <NamePicker 
-          name={this.state.name}
-          editName={this.state.editName}
+          name={name}
+          editName={editName}
           changeName={name=> this.setState({name})}
-          setEditName={editName => this.setState({editName})} />
-          </div>
+          setEditName={this.setEditName} />
         </header>
-
-        <div className="container">
-          <p>Hello. How are you today?</p>
-        </div>
-
-        <div className="container darker">
-          <p>Hey! I'm fine. Thanks for asking!</p>
-    </div>
 
         <main className="messages">
           {/* To write javaScript in html, start with curly braces*/}
           {messages.map((m, i)=>{
             /*Putting curly braces around m because m is javascript and div is html*/
-            return <div key={i} className="bubble-wrap">
+            return <div key={i} className="bubble-wrap"
+              from={m.from===name ? "me" : "you"}>
+        
+              {m.from!==name && <div className="bubble-name">{m.from}</div>}
               <div className="bubble">
-              <span>{m}</span>
+              <span>{m.text}</span>
               </div>
             </div>
           })}

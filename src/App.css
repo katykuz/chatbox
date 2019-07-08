@@ -93,7 +93,7 @@ input:focus{
 /* Chat containers */
 .container {
   border: 2px solid white;
-  background-color: black;
+  background-color: #1f1e2e;
   border-radius: 15px;
   padding: 5px;
   margin: 5px;
@@ -109,7 +109,7 @@ input:focus{
 /* Darker chat container */
 .darker {
   border-color: #ccc;
-  background-color: black;
+  background-color: #1f1e2e;
 }
 
 /* Clear floats */
@@ -139,17 +139,11 @@ input:focus{
 }
 
 .bubble{
-
   border-radius:15px;
-
   padding: 8px 12px;
-
   font-size: 14px;
-
   position:relative;
-
   border: 1px solid white;
-
   margin-left:5px;
 
 }
@@ -177,81 +171,51 @@ input:focus{
 } */
 
 .bubble-wrap[from="me"] .bubble:before{
-
   left:auto;
-
 }
 
 .bubble:after{
-
   content:"";
-
-  background:black;
-
+  background:#1f1e2e;
   position:absolute;
-
   top:0;left:0;right:0;bottom:0;
-
   border-radius:15px;
-
 }
 
 .bubble > span {
-
   color:white;
-
   position:relative;
-
   z-index:101;
-
 }
 
 .bubble-name{
-
   position: absolute;
-
   color: white;
-
   top: -5px;
-
   font-size:10px;
-
   left: 30px;
-
 }
 
+
 .edit-username{
-
   display: flex;
-
-  align-items: center;
-
+  align-items: left;
 }
 
 .name-button{
-
   height:29px;
-
   margin:0 6px;
-
   background:transparent;
-
-  border:1px solid white;
-
-  color:white;
-
+  border:1px solid #1f1e2e;
+  border-radius: 12px;
+  color:#1f1e2e;
   font-size:10px;
-
   padding:7px;
-
   cursor: pointer;
-
 }
 
 .name-button:hover{
-
   background:rgba(255,255,255,0.1)
-
 }
 
 .name-input{
@@ -260,15 +224,15 @@ input:focus{
 
   height:31px;
 
-  border:2px solid white;
+  border:1px solid white;
 
   border-radius:14px;
 
-  padding-left:12px;
+  padding-left:10px;
 
   background:#1f1e2e;
 
-  padding-bottom:2px;
+  padding-top:6px;
 
   font-size:12px;
 
@@ -280,24 +244,8 @@ input:focus{
 
   align-items: center;
 
-  margin-right:12px;
+  margin-right:10px;
 
-  font-size:16px;
-
-}
-
-.messages{
-  height: calc(100%-85px);
-  overflow:auto;
-  padding-top:10px;
-}
-
-.name-input {
-
-  justify-content: space-between;
-
-  position: relative;
-
-  float: right;
+  font-size:14px;
 
 }
