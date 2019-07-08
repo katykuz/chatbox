@@ -125,6 +125,14 @@ input:focus{
   cursor: default;
 }
 
+.messages{
+  display: flex;
+  overflow:auto;
+  height:calc(100% - 132px);
+  padding-top:20px;
+  flex-direction: column-reverse;
+}
+
 
 .bubble-wrap{
   width:100%;
@@ -135,7 +143,7 @@ input:focus{
 }
 
 .bubble-wrap[from="me"]{ 
-  flex-direction:row-reverse;
+  flex-direction: row-reverse;
 }
 
 .bubble{
@@ -194,6 +202,7 @@ input:focus{
   top: -5px;
   font-size:10px;
   left: 30px;
+  bottom: 15px;
 }
 
 

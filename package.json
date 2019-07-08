@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "feather": "0.0.6",
+    "firebase": "^6.2.4",
     "icons": "^1.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
