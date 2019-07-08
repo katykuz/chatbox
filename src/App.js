@@ -11,15 +11,23 @@ class App extends React.Component {
   state = {
     messages: [],
     name:'',
-    editName:false,
+    editName: false,
   }
 
-  gotMessage = (text) => {
+  gotMessage = (m) => {
+    const message = {
+      text: m,
+      from: this.state.name
+    }
     /* ... is a separator*/
-    var newMessagesArray = [...this.state.messages, text]
+    var newMessagesArray = [...this.state.messages, m]
     this.setState({messages: newMessagesArray})
   }
 
+  setEditName = (boolian) => {
+    var editName = boolian
+    this.setState({editName})
+  }
 
 
   render() {
@@ -27,18 +35,24 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="header">
-          <img src={logo} className="logo" alt="logo" />
-          Chatbox
-          <NamePicker />
+          <div><img src={logo} className="logo" alt="logo" />
+          Chatbox</div>
+          <div className="name-input">
+        <NamePicker 
+          name={this.state.name}
+          editName={this.state.editName}
+          changeName={name=> this.setState({name})}
+          setEditName={editName => this.setState({editName})} />
+          </div>
         </header>
 
-        {/*<div className="container">
+        <div className="container">
           <p>Hello. How are you today?</p>
         </div>
 
         <div className="container darker">
           <p>Hey! I'm fine. Thanks for asking!</p>
-    </div>*/}
+    </div>
 
         <main className="messages">
           {/* To write javaScript in html, start with curly braces*/}
@@ -56,6 +70,7 @@ class App extends React.Component {
         <TextInput sendMessage={this.gotMessage} />
 
       </div>
+      
     );
   }
 }

@@ -16,6 +16,7 @@
 /* Heading styling, sizing, color */
 .header{
   display: flex;
+  justify-content:space-between;
   align-items: center;
   flex-direction: row;
   font-size:40px;
@@ -179,8 +180,6 @@ input:focus{
 
   left:auto;
 
-  /*right:-6px;*/
-
 }
 
 .bubble:after{
@@ -221,8 +220,84 @@ input:focus{
 
 }
 
+.edit-username{
+
+  display: flex;
+
+  align-items: center;
+
+}
+
+.name-button{
+
+  height:29px;
+
+  margin:0 6px;
+
+  background:transparent;
+
+  border:1px solid white;
+
+  color:white;
+
+  font-size:10px;
+
+  padding:7px;
+
+  cursor: pointer;
+
+}
+
+.name-button:hover{
+
+  background:rgba(255,255,255,0.1)
+
+}
+
+.name-input{
+
+  color:white;
+
+  height:31px;
+
+  border:2px solid white;
+
+  border-radius:14px;
+
+  padding-left:12px;
+
+  background:#1f1e2e;
+
+  padding-bottom:2px;
+
+  font-size:12px;
+
+}
+
+.username{
+
+  display: flex;
+
+  align-items: center;
+
+  margin-right:12px;
+
+  font-size:16px;
+
+}
+
 .messages{
   height: calc(100%-85px);
   overflow:auto;
   padding-top:10px;
+}
+
+.name-input {
+
+  justify-content: space-between;
+
+  position: relative;
+
+  float: right;
+
 }
