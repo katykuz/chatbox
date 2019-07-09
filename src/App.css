@@ -76,7 +76,7 @@ input:focus{
   left: calc(100% - 30px);
   border-radius: 10px;
   cursor: pointer;
-  border: 1px solid rgb(70, 68, 68, 0.1);
+  border: 2px solid rgb(70, 68, 68, 0.1);
   border-radius:15px;
   background:rgb(102, 102, 102);
   color: white;
@@ -90,35 +90,6 @@ input:focus{
   color: black;
 }
 
-/* Chat containers */
-.container {
-  border: 2px solid white;
-  background-color: #1f1e2e;
-  border-radius: 15px;
-  padding: 5px;
-  margin: 5px;
-  text-align: left;
-  color: white;
-  height: 45px;
-  width: 300px;
-  align-items: center;
-  display:flex;
-  flex-direction:row;
-}
-
-/* Darker chat container */
-.darker {
-  border-color: #ccc;
-  background-color: #1f1e2e;
-}
-
-/* Clear floats */
-.container::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
 .text.input > button[disabled] {
   color:white;
   background: grey;
@@ -126,37 +97,57 @@ input:focus{
 }
 
 .messages{
+
   display: flex;
+
   overflow:auto;
+
   height:calc(100% - 132px);
-  padding-top:20px;
+
+  padding-bottom:15px;
+
   flex-direction: column-reverse;
+
 }
+
 
 
 .bubble-wrap{
+
   width:100%;
-  padding:2px 5px;
+  
+  padding:8px 20px;
+
   display:flex;
-  position: relative; 
-  height: 40px;
+
+  position: relative;
+
 }
 
-.bubble-wrap[from="me"]{ 
-  flex-direction: row-reverse;
+.bubble-wrap[from="me"] {
+
+  flex-direction:row-reverse;
+
 }
 
 .bubble{
-  border-radius:15px;
-  padding: 8px 12px;
-  font-size: 14px;
-  position:relative;
-  border: 1px solid white;
-  margin-left:5px;
 
+  border-radius:11px;
+
+  padding: 5px 18px;
+
+  height: 35px;
+
+  font-size: 14px;
+
+  position:relative;
+
+  border: 2px solid #606060;
+
+  margin-left:5px;
 }
 
-/*.bubble:before{
+.bubble:before{
 
   content:"";
 
@@ -166,9 +157,9 @@ input:focus{
 
   transform:rotate(45deg);
 
-  background:black;
+  background:#1f1e2e;
 
-  border: 2px solid white;
+  border: 2px solid #606060;
 
   position:absolute;
 
@@ -176,55 +167,88 @@ input:focus{
 
   top:10px
 
-} */
+}
 
 .bubble-wrap[from="me"] .bubble:before{
+
   left:auto;
+
+  right:-6px;
+
 }
 
 .bubble:after{
+
   content:"";
+
   background:#1f1e2e;
+
   position:absolute;
+
   top:0;left:0;right:0;bottom:0;
-  border-radius:15px;
+
+  border-radius:10px;
+
 }
 
 .bubble > span {
+
   color:white;
+
   position:relative;
+
   z-index:101;
+
 }
 
 .bubble-name{
+
   position: absolute;
+
   color: white;
+
   top: -5px;
+
   font-size:10px;
+
   left: 30px;
-  bottom: 15px;
+
 }
+
 
 
 .edit-username{
+
   display: flex;
-  align-items: left;
+
+  align-items: center;
+
 }
 
 .name-button{
+
   height:29px;
+
   margin:0 6px;
+
   background:transparent;
-  border:1px solid #1f1e2e;
-  border-radius: 12px;
-  color:#1f1e2e;
+
+  border:1px solid white;
+
+  color:white;
+
   font-size:10px;
+
   padding:7px;
+
   cursor: pointer;
+
 }
 
 .name-button:hover{
+
   background:rgba(255,255,255,0.1)
+
 }
 
 .name-input{
@@ -237,11 +261,11 @@ input:focus{
 
   border-radius:14px;
 
-  padding-left:10px;
+  padding-left:12px;
 
   background:#1f1e2e;
 
-  padding-top:6px;
+  padding-bottom:2px;
 
   font-size:12px;
 
@@ -253,8 +277,8 @@ input:focus{
 
   align-items: center;
 
-  margin-right:10px;
+  margin-right:12px;
 
-  font-size:14px;
+  font-size:16px;
 
 }
