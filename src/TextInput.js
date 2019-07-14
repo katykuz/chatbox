@@ -1,5 +1,6 @@
 import React from 'react'
-import { FiSend } from "react-icons/fi";
+import { FiSend, FiCamera } from "react-icons/fi";
+
 
 /* Inserting Text Input Box */
 class TextInput extends React.Component{
@@ -30,8 +31,12 @@ class TextInput extends React.Component{
             /* No fat arrow bellow (onKeyPress) because we made our own KeyPress function that included the fat arrow*/
             onKeyPress={this.keyPress}
             />
-            <button disabled={!this.state.text} onClick={this.send} >
+            <button className = "button1" disabled={!this.state.text} onClick={this.send} >
             < FiSend style={{height:12, width:12}}/> 
+            </button>
+            <button className = "button2" onClick= {this.props.showCamera} 
+            style={{right:'auto'}}>
+            <FiCamera style={{height:12, width:12}}/>
             </button>
             </div>)
             }

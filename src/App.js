@@ -7,6 +7,7 @@ import NamePicker from './NamePicker'
 import * as firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/storage"
+import Camera from 'react-snap-pic'
 
 
 /* Creating the page and what is in the page */
@@ -15,6 +16,7 @@ class App extends React.Component {
     messages: [],
     name: '',
     editName: false,
+    showCamera: false
   }
 
   componentWillMount() {
@@ -24,10 +26,11 @@ class App extends React.Component {
     }
     /* <=========================> */
     firebase.initializeApp({
-      apiKey: "AIzaSyBAJVwrP5J4AhVKd5ijYtcTF9XMV6tIcY4",
-      authDomain: "msgr-2.firebaseapp.com",
-      projectId: "msgr-2",
-      storageBucket: "msgr-2.appspot.com",
+      apiKey: "AIzaSyB3slNJIq3gZ3cCy18QgxsqmcEi4ph1AZU",
+      authDomain: "summer-project-438.firebaseapp.com",
+      databaseURL: "https://summer-project-438.firebaseio.com",
+      projectId: "summer-project-438",
+      storageBucket: "",
     });
     this.db = firebase.firestore();
 
@@ -63,13 +66,19 @@ class App extends React.Component {
     this.setState({ editName })
   }
 
+  takePicture = (img) => {
+   console.log(img)
+    this.setState({showCamera:false})
+    Camera = this.state.showCamera && <Camera takePicture={this.takePicture} />
+}
+
 
   render() {
     var { editName, messages, name } = this.state
     return (
       <div className="App">
         <header className="header">
-          <div><img src={logo} className="logo" alt="logo" />
+          <div className = "iconwrapper"><img src={logo} className="logo" alt="logo" />
             Chatbox</div>
           <NamePicker
             name={name}
@@ -82,19 +91,14 @@ class App extends React.Component {
           {/* To write javaScript in html, start with curly braces*/}
           {messages.map((m, i) => {
             /*Putting curly braces around m because m is javascript and div is html*/
-            return <div key={i} className="bubble-wrap"
-              from={m.from === name ? "me" : "you"}>
-
-              {m.from !== name && <div className="bubble-name">{m.from}</div>}
-              <div className="bubble">
-                <span>{m.text}</span>
-              </div>
-            </div>
+            return <Message key={i} m={m} name={name} />
           })}
 
         </main>
 
-        <TextInput sendMessage={text => this.send({ text })} />
+        <TextInput 
+        sendMessage={text => this.send({ text })}
+        showCamera={() => this.setState({showCamera:true})}/>
 
       </div>
 
@@ -104,5 +108,17 @@ class App extends React.Component {
 
 
 export default App;
+
+function Message(props) {
+  var {m, name} = props
+  return(<div className="bubble-wrap"
+  from={m.from === name ? "me" : "you"}>
+
+  {m.from !== name && <div className="bubble-name">{m.from}</div>}
+  <div className="bubble">
+    <span>{m.text}</span>
+  </div>
+</div>)
+}
 
 
