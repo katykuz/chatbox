@@ -16,7 +16,7 @@ class App extends React.Component {
     messages: [],
     name: '',
     editName: false,
-    showCamera: false
+    showCamera: false,
   }
 
   componentWillMount() {
@@ -69,7 +69,6 @@ class App extends React.Component {
   takePicture = (img) => {
    console.log(img)
     this.setState({showCamera:false})
-    Camera = this.state.showCamera && <Camera takePicture={this.takePicture} />
 }
 
 
@@ -99,6 +98,7 @@ class App extends React.Component {
         <TextInput 
         sendMessage={text => this.send({ text })}
         showCamera={() => this.setState({showCamera:true})}/>
+        {this.state.showCamera && <Camera takePicture={this.takePicture} />}
 
       </div>
 
